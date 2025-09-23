@@ -262,12 +262,12 @@ public class LibroDAOImpl implements LibroDAO {
 
         // VALIDACIÓN: Verificar que el autor existe
         if (autorId <= 0) {
-            System.out.println("⚠️ ID de autor inválido: " + autorId);
+            System.out.println("ID de autor inválido: " + autorId);
             return libros;
         }
 
         if (!autorDAO.existe(autorId)) {
-            System.out.println("⚠️ Autor con ID " + autorId + " no existe");
+            System.out.println("Autor con ID " + autorId + " no existe");
             return libros; // Lista vacía
         }
 
@@ -298,10 +298,10 @@ public class LibroDAOImpl implements LibroDAO {
                 nombreAutor = libros.get(0).getAutor().getNombreCompleto();
             }
 
-            System.out.println("✅ Encontrados " + libros.size() + " libros de " + nombreAutor);
+            System.out.println("Encontrados " + libros.size() + " libros de " + nombreAutor);
 
         } catch (SQLException e) {
-            System.err.println("❌ Error buscando libros por autor ID: " + e.getMessage());
+            System.err.println("Error buscando libros por autor ID: " + e.getMessage());
             throw new RuntimeException("Error en base de datos", e);
         }
 
@@ -312,12 +312,12 @@ public class LibroDAOImpl implements LibroDAO {
     public List<Libro> buscarPorAutor(Autor autor) {
         // Validaciones
         if (autor == null) {
-            System.out.println("⚠️ Autor es null");
+            System.out.println("Autor es null");
             return new ArrayList<>();
         }
 
         if (autor.getId() <= 0) {
-            System.out.println("⚠️ Autor sin ID válido: " + autor.getNombreCompleto());
+            System.out.println("Autor sin ID válido: " + autor.getNombreCompleto());
             return new ArrayList<>();
         }
 
@@ -330,12 +330,12 @@ public class LibroDAOImpl implements LibroDAO {
 
         // Validaciones
         if (añoInicio > añoFin) {
-            System.out.println("⚠️ Rango de años inválido: " + añoInicio + " - " + añoFin);
+            System.out.println("Rango de años inválido: " + añoInicio + " - " + añoFin);
             return libros;
         }
 
         if (añoInicio < 1000 || añoFin > 3000) {
-            System.out.println("⚠️ Años fuera de rango válido: " + añoInicio + " - " + añoFin);
+            System.out.println("Años fuera de rango válido: " + añoInicio + " - " + añoFin);
             return libros;
         }
 
@@ -374,7 +374,7 @@ public class LibroDAOImpl implements LibroDAO {
     @Override
     public int contarPorGenero(String genero) {
         if (genero == null || genero.trim().isEmpty()) {
-            System.out.println("⚠️ Género inválido o vacío");
+            System.out.println("Género inválido o vacío");
             return 0;
         }
 
@@ -405,7 +405,7 @@ public class LibroDAOImpl implements LibroDAO {
         List<Libro> libros = new ArrayList<>();
 
         if (año < 1000 || año > 3000) {
-            System.out.println("⚠️ Año inválido: " + año);
+            System.out.println("Año inválido: " + año);
             return libros;
         }
 
@@ -505,7 +505,7 @@ public class LibroDAOImpl implements LibroDAO {
         }
 
         if (!existe(id)) {
-            System.out.println("⚠️ No existe libro con ID: " + id);
+            System.out.println("No existe libro con ID: " + id);
             return;
         }
         String sql = "DELETE FROM libros WHERE id = ?";
