@@ -54,10 +54,10 @@ public class Libro {
     public void setPaginas(int paginas) {
         this.paginas = paginas;
     }
-    public Year getanoPublicacion() {
+    public Year getAnoPublicacion() {
         return anoPublicacion;
     }
-    public void setanoPublicacion(Year ano_publicacion) {
+    public void setAnoPublicacion(Year ano_publicacion) {
         this.anoPublicacion = ano_publicacion;
     }
     public String getGenero() {

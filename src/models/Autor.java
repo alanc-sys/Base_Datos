@@ -60,4 +60,8 @@ public class Autor {
         return "models.Autor{id=" + id + ", nombre='" + nombre + "', apellido='" + apellido +
                 "', nacionalidad='" + nacionalidad + "', fechaNacimiento=" + fechaNacimiento + "}";
     }
+
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
+    }
 }
