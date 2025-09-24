@@ -1,0 +1,15 @@
+# Gradle
+.gradle
+build/
+!build/libs/
+
+# IDE
+.idea/
+*.iml
+out/
+
+# OS
+.DS_Store
+
+# Secrets
+.env
