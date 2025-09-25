@@ -889,17 +889,28 @@ public class LibreriaApp {
         System.out.flush();
     }
 
-    private static void pausar() {
-        System.out.println();
+    public static void pausar() {
         System.out.println("Presiona ENTER para continuar...");
-        scanner.nextLine();
+        try {
+            if (System.console() != null) {
+                System.console().readLine();
+            } else {
+                new Scanner(System.in).nextLine();
+            }
+        } catch (Exception e) {
+        }
     }
 
     private static int leerOpcion() {
         try {
-            return Integer.parseInt(scanner.nextLine().trim());
+            if (scanner.hasNextLine()) {
+                return Integer.parseInt(scanner.nextLine().trim());
+            } else {
+                // No hay entrada disponible (ej. ejecutando con Gradle run)
+                return -1;
+            }
         } catch (NumberFormatException e) {
-            return -1;
+            return -1;// Entrada inválida (ej. letras en vez de número)
         }
     }
 
