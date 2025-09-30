@@ -25,9 +25,6 @@ Este proyecto nació como un ejercicio de aprendizaje para demostrar conocimient
 - [Tecnologías y Decisiones Técnicas](#-tecnologías-y-decisiones-técnicas)
 - [Conceptos Fundamentales que Aprendí](#-conceptos-fundamentales-que-aprendí)
 - [Instalación y Uso](#-instalación-y-uso)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Capturas de Pantalla](#-capturas-de-pantalla)
-- [Roadmap Futuro](#-roadmap-futuro)
 - [Reflexiones Finales](#-reflexiones-finales)
 
 ---
